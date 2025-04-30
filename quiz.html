@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<!-- Cybersecurity Quiz Page -->
+<html>
+<head>
+  <title>Cybersecurity Quiz</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <style>
+    input[type="radio"] {
+      appearance: auto;
+      accent-color: #0077cc;
+      margin-right: 0.5em;
+    }
+  </style>
+  // Quiz scoring logic in quiz.html
+  <script>
+    function checkAnswers() {
+      const answers = {
+        q1: "c",
+        q2: "a",
+        q3: "a"
+      };
+      let score = 0;
+      for (let key in answers) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === answers[key]) {
+          score++;
+        }
+      }
+      const result = document.getElementById("quiz-result");
+      result.innerHTML = `You got ${score} out of 3 questions correct.`;
+      result.style.display = "block";
+    }
+  </script>
+</head>
+<body class="is-preload">
+  <div id="page-wrapper">
+
+    <!-- Header -->
+    <div id="header">
+      <div class="inner">
+        <header>
+          <h1><a href="index.html" id="logo">Cybersecurity Quiz</a></h1>
+          <p>Test your knowledge on staying safe online!</p>
+        </header>
+      </div>
+
+      <nav id="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="quiz.html">Take the Quiz</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Quiz Form -->
+    <div class="wrapper style2">
+      <div class="container">
+        <form>
+          <!-- Radio button form collecting user answers -->
+          <h2>1. What makes a strong password?</h2>
+          <label><input type="radio" name="q1" value="a"> Just letters</label><br>
+          <label><input type="radio" name="q1" value="b"> Just numbers</label><br>
+          <label><input type="radio" name="q1" value="c"> A mix of letters, numbers, and symbols</label><br>
+
+          <h2>2. Which of these is a sign of a phishing email?</h2>
+          <label><input type="radio" name="q2" value="a"> It asks for personal info urgently</label><br>
+          <label><input type="radio" name="q2" value="b"> It comes from your friend</label><br>
+          <label><input type="radio" name="q2" value="c"> It has a funny meme</label><br>
+
+          <h2>3. Before clicking a suspicious link, you should:</h2>
+          <label><input type="radio" name="q3" value="a"> Hover over it to check the URL</label><br>
+          <label><input type="radio" name="q3" value="b"> Just click and see what happens</label><br>
+          <label><input type="radio" name="q3" value="c"> Forward it to a friend</label><br><br>
+
+          <button type="button" onclick="checkAnswers()">Submit Quiz</button>
+        </form>
+        <div id="quiz-result" style="display:none; margin-top: 20px; font-weight: bold;"></div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="copyright">
+              <ul class="menu">
+                <li>&copy; 2025. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
