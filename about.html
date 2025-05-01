@@ -17,14 +17,15 @@
           <p>Learn why this site was built</p>
         </header>
       </div>
-      <nav id="nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="quiz.html">Take the Quiz</a></li>
-          <li><a href="resources.html">Resources</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </nav>
+      <!-- Navigation bar using ARIA attributes for accessibility -->
+<nav id="nav" aria-label="Main navigation">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="quiz.html">Take the Quiz</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="about.html" aria-current="page">About</a></li> <!-- Indicates current page -->
+  </ul>
+</nav>
     </div>
 
     <!-- Main Content -->
@@ -57,7 +58,7 @@
           <div class="col-12">
             <div class="copyright">
               <ul class="menu">
-                <li>&copy; 2025. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                <li>&copy; 2025. Baht Otgonbayar</li>
               </ul>
             </div>
           </div>

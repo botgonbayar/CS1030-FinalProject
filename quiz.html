@@ -13,24 +13,26 @@
       margin-right: 0.5em;
     }
   </style>
-  // Quiz scoring logic in quiz.html
   <script>
     function checkAnswers() {
+        // Object containing correct answers to each question
       const answers = {
         q1: "c",
         q2: "a",
         q3: "a"
       };
-      let score = 0;
+      let score = 0; // Initialize score
+        // Loop through each question and compare user selection with correct answer
       for (let key in answers) {
         const selected = document.querySelector(`input[name="${key}"]:checked`);
         if (selected && selected.value === answers[key]) {
-          score++;
+          score++; // Add point if correct
         }
       }
+      // Display the result in the result box
       const result = document.getElementById("quiz-result");
       result.innerHTML = `You got ${score} out of 3 questions correct.`;
-      result.style.display = "block";
+      result.style.display = "block"; // Make result box visible
     }
   </script>
 </head>
@@ -46,14 +48,14 @@
         </header>
       </div>
 
-      <nav id="nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="quiz.html">Take the Quiz</a></li>
-          <li><a href="resources.html">Resources</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </nav>
+      <nav id="nav" aria-label="Main navigation">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="quiz.html" aria-current="page">Take the Quiz</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
     </div>
 
     <!-- Quiz Form -->
@@ -89,7 +91,7 @@
           <div class="col-12">
             <div class="copyright">
               <ul class="menu">
-                <li>&copy; 2025. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+               <li>&copy; 2025. Baht Otgonbayar</li>
               </ul>
             </div>
           </div>
